@@ -1,6 +1,7 @@
 import {NgModule} from "@angular/core";
 import {Routes} from "@angular/router";
 import {NativeScriptRouterModule} from "nativescript-angular/router";
+import {AppContainer} from "~/app/container/app/app.container";
 
 const routes: Routes = [
     {
@@ -9,8 +10,8 @@ const routes: Routes = [
         pathMatch: "full"
     },
     {
-        path: "home",
-        loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule)
+        path: 'home',
+        component: AppContainer
     }
 ];
 
