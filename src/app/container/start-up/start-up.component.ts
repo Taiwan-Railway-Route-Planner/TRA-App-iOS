@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Language } from '../../types/language.type';
 import { AppSandbox } from '../../app.sandbox';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ns-start-up',
@@ -10,9 +11,10 @@ import { AppSandbox } from '../../app.sandbox';
       <DockLayout class="page">
         <FlexboxLayout dock="top" class="main-menu">
           <Label class="title" text="TRA Route Planner"></Label>
+          <Label [text]="tc + '.CONFIRM' | translate"></Label>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="menu-bottom">
-          <Button *ngIf="languageSelected" class="btn" text=""></Button>
+          <Button *ngIf="languageSelected" class="btn" text="{{ tc + '.CONFIRM' | translate }}"></Button>
         </FlexboxLayout>
         <FlexboxLayout class="menu-center">
           <ng-container *ngFor="let item of (availableLanguages$ | async)">
@@ -25,20 +27,24 @@ import { AppSandbox } from '../../app.sandbox';
   `
 })
 export class StartUpComponent implements OnInit {
+  tc = 'START-UP';
 
   // presentation streams
-  languageSelected = false;
+  languageSelected = true;
   availableLanguages$: Observable<Language[]> = this.sb.availableLanguages$;
 
-  constructor(private sb: AppSandbox) { }
-
-
-  ngOnInit(): void {
-  }
+  constructor(
+      private translateService: TranslateService,
+      private sb: AppSandbox
+  ) {}
 
   showConfirmButton(item: Language): void {
     this.languageSelected = true;
+    this.translateService.use(item.abbr);
+  }
 
+  ngOnInit(): void {
+    this.translateService.setDefaultLang('nl-BE');
   }
 
 }
