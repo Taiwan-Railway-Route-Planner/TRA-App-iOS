@@ -1,0 +1,28 @@
+/*BOTTOM NAVIGATION*/
+
+$primary: blue;
+$dark: black;
+
+.fas {
+  color: $primary;
+
+  .ns-dark & {
+    color: #D3D3D3;
+  }
+}
+
+.menu-choose {
+  flex-direction: row;
+  justify-content: center;
+  border-color: #D3D3D3;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-top-width: 2px;
+  border-top-style: solid;
+  width: 33%;
+  padding-top: 4%;
+
+  .ns-dark & {
+    border-color: $dark;
+  }
+}
