@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { httpLoaderFactory } from '~/app/factories/http-loader.factory';
 
 @NgModule({
+    bootstrap: [
+      AppComponent
+    ],
     imports: [
         NativeScriptModule,
         AppRoutingModule,
