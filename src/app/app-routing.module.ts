@@ -1,17 +1,17 @@
-import {NgModule} from "@angular/core";
-import {Routes} from "@angular/router";
-import {NativeScriptRouterModule} from "nativescript-angular/router";
-import {AppContainer} from "~/app/container/app/app.container";
+import { NgModule } from '@angular/core';
+import { Routes } from '@angular/router';
+import { NativeScriptRouterModule } from 'nativescript-angular/router';
+import { AppComponent } from '~/app/app.component';
 
 const routes: Routes = [
     {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full"
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
     },
     {
         path: 'home',
-        component: AppContainer
+        component: AppComponent
     }
 ];
 
