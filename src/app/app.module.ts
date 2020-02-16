@@ -4,12 +4,17 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { httpLoaderFactory } from '~/app/factories/http-loader.factory';
+
+import { AppComponent } from './app.component';
+import { StartUpComponent } from './container/start-up/start-up.component';
+
+import { BottomBarMenuModule } from '~/app/component/bottom-bar-menu/bottom-bar-menu.module';
 
 @NgModule({
     bootstrap: [
-      AppComponent
+        AppComponent,
+        StartUpComponent
     ],
     imports: [
         NativeScriptModule,
@@ -20,10 +25,12 @@ import { httpLoaderFactory } from '~/app/factories/http-loader.factory';
                 useFactory: httpLoaderFactory,
                 deps: [HttpClient]
             }
-        })
+        }),
+        BottomBarMenuModule,
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        StartUpComponent
     ]
 })
 export class AppModule {
