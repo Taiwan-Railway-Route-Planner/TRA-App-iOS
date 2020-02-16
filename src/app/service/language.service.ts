@@ -11,47 +11,47 @@ export class LanguageService {
     {
       nameNative: 'English',
       name: 'English',
-      abbr: 'EN'
+      abbr: 'en-GB'
     },
     {
       nameNative: '中文',
       name: 'Traditional Chinese',
-      abbr: 'ZH'
+      abbr: 'zh-TW'
     },
     {
       nameNative: '한국어',
       name: 'Korean',
-      abbr: 'KO'
+      abbr: 'ko-KR'
     },
     {
       nameNative: 'Nederlands',
       name: 'Dutch',
-      abbr: 'NL'
+      abbr: 'nl-BE'
     },
     {
       nameNative: 'Español',
       name: 'Spanish',
-      abbr: 'ES'
+      abbr: 'es-ES'
     },
     {
       nameNative: 'Deutsch',
       name: 'German',
-      abbr: 'DE'
+      abbr: 'de-DE'
     },
     {
       nameNative: 'Française',
       name: 'French',
-      abbr: 'FR'
+      abbr: 'fr-FR'
     },
     {
       nameNative: 'Հայերեն',
       name: 'Armenian',
-      abbr: 'AR',
+      abbr: 'hy-AM',
     },
     {
       nameNative: 'Русский',
       name: 'Russian',
-      abbr: 'RU'
+      abbr: 'ru-RU'
     }
   ]);
 }
