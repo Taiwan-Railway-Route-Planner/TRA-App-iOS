@@ -1,3 +1,8 @@
 {
-	"@START-UP.CONFIRM": "確認"
+	"@COMMON": {
+		"TITLE": "確認"
+	},
+	"START-UP": {
+		"CONFIRM": "確認"
+	}
 }

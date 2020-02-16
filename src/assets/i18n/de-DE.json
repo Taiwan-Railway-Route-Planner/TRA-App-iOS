@@ -1,3 +1,8 @@
 {
-	"@START-UP.CONFIRM": "BESTÄTIGEN"
+	"@COMMON": {
+		"TITLE": "BESTÄTIGEN"
+	},
+	"START-UP": {
+		"CONFIRM": "BESTÄTIGEN"
+	}
 }

@@ -1,3 +1,8 @@
 {
-	"@START-UP.CONFIRM": "ACCEPTER"
+	"@COMMON": {
+		"TITLE": "ACCEPTER"
+	},
+	"START-UP": {
+		"CONFIRM": "ACCEPTER"
+	}
 }

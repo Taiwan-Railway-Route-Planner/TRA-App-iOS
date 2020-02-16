@@ -1,3 +1,8 @@
 {
-	"@START-UP.CONFIRM": "ՀԱՍՏԱՏԵԼ"
+	"@COMMON": {
+		"TITLE": "ՀԱՍՏԱՏԵԼ"
+	},
+	"START-UP": {
+		"CONFIRM": "ՀԱՍՏԱՏԵԼ"
+	}
 }
