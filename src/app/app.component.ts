@@ -4,7 +4,13 @@ import {Component, OnInit} from '@angular/core';
     selector: 'ns-app',
     styleUrls: ['./app.component.scss'],
     template: `
-        <Label class="test" text="hello welcome {{ title }}"></Label>
+        <DockLayout>
+            <FlexboxLayout>
+            </FlexboxLayout>
+            <FlexboxLayout dock="bottom" class="bottom-menu">
+                <ns-bar-bottom-menu></ns-bar-bottom-menu>
+            </FlexboxLayout>
+        </DockLayout>
     `
 })
 export class AppComponent implements OnInit {
