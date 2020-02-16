@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
-import { AppComponent } from '~/app/app.component';
+import { AppComponent } from './app.component';
+import { StartUpComponent } from './container/start-up/start-up.component';
 
 const routes: Routes = [
     {
@@ -11,7 +12,7 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: AppComponent
+        component: StartUpComponent
     }
 ];
 

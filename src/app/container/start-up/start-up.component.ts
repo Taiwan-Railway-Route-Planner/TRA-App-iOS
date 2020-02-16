@@ -7,7 +7,7 @@ import { AppSandbox } from '../../app.sandbox';
   selector: 'ns-start-up',
   styleUrls: ['./start-up.component.scss'],
   template: `
-      <DockLayout>
+      <DockLayout class="page">
         <FlexboxLayout dock="top" class="main-menu">
           <Label class="title" text="TRA Route Planner"></Label>
         </FlexboxLayout>
@@ -17,7 +17,7 @@ import { AppSandbox } from '../../app.sandbox';
         <FlexboxLayout class="menu-center">
           <ng-container *ngFor="let item of (availableLanguages$ | async)">
             <FlexboxLayout class="element">
-              <Label class="top-text" [text]="item.name"></Label>
+              <Label class="top-text" [text]="item.nameNative"></Label>
             </FlexboxLayout>
           </ng-container>
         </FlexboxLayout>
