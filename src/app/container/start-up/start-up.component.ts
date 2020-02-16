@@ -17,7 +17,7 @@ import { AppSandbox } from '../../app.sandbox';
         <FlexboxLayout class="menu-center">
           <ng-container *ngFor="let item of (availableLanguages$ | async)">
             <FlexboxLayout class="element">
-              <Label class="top-text" [text]="item.nameNative"></Label>
+              <Label class="top-text" [text]="item.nameNative" (tap)="showConfirmButton(item)"></Label>
             </FlexboxLayout>
           </ng-container>
         </FlexboxLayout>
@@ -34,6 +34,11 @@ export class StartUpComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  showConfirmButton(item: Language): void {
+    this.languageSelected = true;
+
   }
 
 }
