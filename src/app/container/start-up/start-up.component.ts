@@ -11,7 +11,6 @@ import { TranslateService } from '@ngx-translate/core';
       <DockLayout class="page">
         <FlexboxLayout dock="top" class="main-menu">
           <Label class="title" text="TRA Route Planner"></Label>
-          <Label [text]="tc + '.CONFIRM' | translate"></Label>
         </FlexboxLayout>
         <FlexboxLayout dock="bottom" class="menu-bottom">
           <Button *ngIf="languageSelected" class="btn" text="{{ tc + '.CONFIRM' | translate }}"></Button>
