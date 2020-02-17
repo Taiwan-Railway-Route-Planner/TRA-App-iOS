@@ -30,7 +30,8 @@
   background-color: $primary;
 
   .ns-dark &{
-    background-color: $dark-primary;
+    // TODO 
+    background-color: $primary;
   }
 }
 
@@ -41,7 +42,7 @@
   background-color: $primary;
 
   .ns-dark &{
-    background-color: $dark-primary;
+    background-color: $primary;
   }
 }
 
