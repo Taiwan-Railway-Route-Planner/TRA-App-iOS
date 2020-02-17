@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Language } from '../../types/language.type';
 import { AppSandbox } from '../../app.sandbox';
@@ -25,7 +25,7 @@ import { TranslateService } from '@ngx-translate/core';
       </DockLayout>
   `
 })
-export class StartUpComponent implements OnInit {
+export class StartUpComponent {
   tc = 'START-UP';
 
   // presentation streams
@@ -41,9 +41,4 @@ export class StartUpComponent implements OnInit {
     this.languageSelected = true;
     this.translateService.use(item.abbr);
   }
-
-  ngOnInit(): void {
-    this.translateService.setDefaultLang('nl-BE');
-  }
-
 }
