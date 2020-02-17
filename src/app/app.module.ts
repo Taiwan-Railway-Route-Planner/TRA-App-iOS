@@ -2,7 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpBackend } from '@angular/common/http';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 
 import { AppRoutingModule } from './app-routing.module';
