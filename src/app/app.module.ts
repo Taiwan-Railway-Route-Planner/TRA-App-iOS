@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { MissingTranslationHandler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +29,7 @@ import { LanguageService } from './service/language.service';
             loader: {
                 provide: TranslateLoader,
                 useFactory: httpLoaderFactory,
-                deps: [HttpClient]
+                deps: [HttpBackend]
             },
             missingTranslationHandler: {
                 provide: MissingTranslationHandler,
@@ -46,6 +46,9 @@ import { LanguageService } from './service/language.service';
     providers: [
         AppSandbox,
         LanguageService
+    ],
+    schemas: [
+        NO_ERRORS_SCHEMA
     ]
 })
 export class AppModule {}
