@@ -1,5 +1,13 @@
 @import "../../../theme/colors.scss";
 
+.bottom-menu {
+  background-color: $white;
+
+  .ns-dark & {
+    background-color: $dark-dark;
+  }
+}
+
 .fas {
   color: $primary;
 
