@@ -1,6 +1,9 @@
 {
-	"@COMMON": {
-		"TITLE": "確認"
+	"HOME-MENU": {
+		"END-STATION": "",
+		"END-STATION-HINT": "",
+		"START-STATION": "",
+		"START-STATION-HINT": ""
 	},
 	"START-UP": {
 		"CONFIRM": "確認"

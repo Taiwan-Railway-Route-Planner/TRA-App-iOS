@@ -1,6 +1,9 @@
 {
-	"@COMMON": {
-		"TITLE": "ПОДТВЕРДИТЬ"
+	"HOME-MENU": {
+		"END-STATION": "",
+		"END-STATION-HINT": "",
+		"START-STATION": "",
+		"START-STATION-HINT": ""
 	},
 	"START-UP": {
 		"CONFIRM": "ПОДТВЕРДИТЬ"

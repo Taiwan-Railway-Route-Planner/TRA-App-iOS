@@ -1,6 +1,9 @@
 {
-	"@COMMON": {
-		"TITLE": "BEVESTIGEN"
+	"HOME-MENU": {
+		"END-STATION": "Naar",
+		"END-STATION-HINT": "",
+		"START-STATION": "Van",
+		"START-STATION-HINT": "Kies een station"
 	},
 	"START-UP": {
 		"CONFIRM": "BEVESTIGEN"

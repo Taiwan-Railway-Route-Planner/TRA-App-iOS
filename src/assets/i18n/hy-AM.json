@@ -1,6 +1,9 @@
 {
-	"@COMMON": {
-		"TITLE": "ՀԱՍՏԱՏԵԼ"
+	"HOME-MENU": {
+		"END-STATION": "",
+		"END-STATION-HINT": "",
+		"START-STATION": "Ընտրել մեկնման կայարանը",
+		"START-STATION-HINT": ""
 	},
 	"START-UP": {
 		"CONFIRM": "ՀԱՍՏԱՏԵԼ"

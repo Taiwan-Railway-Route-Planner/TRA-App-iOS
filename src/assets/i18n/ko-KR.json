@@ -1,6 +1,9 @@
 {
-	"@COMMON": {
-		"TITLE": "확정하다"
+	"HOME-MENU": {
+		"END-STATION": "",
+		"END-STATION-HINT": "",
+		"START-STATION": "",
+		"START-STATION-HINT": ""
 	},
 	"START-UP": {
 		"CONFIRM": "확정하다"

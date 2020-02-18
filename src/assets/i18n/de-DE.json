@@ -1,6 +1,9 @@
 {
-	"@COMMON": {
-		"TITLE": "BESTÄTIGEN"
+	"HOME-MENU": {
+		"END-STATION": "",
+		"END-STATION-HINT": "",
+		"START-STATION": "",
+		"START-STATION-HINT": ""
 	},
 	"START-UP": {
 		"CONFIRM": "BESTÄTIGEN"
