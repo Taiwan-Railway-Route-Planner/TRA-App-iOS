@@ -29,7 +29,7 @@ export class StartUpComponent {
   tc = 'START-UP';
 
   // presentation streams
-  languageSelected = true;
+  languageSelected = false;
   availableLanguages$: Observable<Language[]> = this.sb.availableLanguages$;
 
   constructor(
