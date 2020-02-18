@@ -15,11 +15,14 @@ import { StartUpComponent } from './container/start-up/start-up.component';
 import { BottomBarMenuModule } from './component/bottom-bar-menu/bottom-bar-menu.module';
 import { AppSandbox } from './app.sandbox';
 import { LanguageService } from './service/language.service';
+import { HomeMenuComponent } from './container/home-menu/home-menu.component';
+import { FormStationComponent } from './component/form-station/form-station.component';
 
 @NgModule({
     bootstrap: [
         AppComponent,
-        StartUpComponent
+        StartUpComponent,
+        HomeMenuComponent
     ],
     imports: [
         NativeScriptModule,
@@ -41,7 +44,9 @@ import { LanguageService } from './service/language.service';
     ],
     declarations: [
         AppComponent,
-        StartUpComponent
+        StartUpComponent,
+        HomeMenuComponent,
+        FormStationComponent
     ],
     providers: [
         AppSandbox,
