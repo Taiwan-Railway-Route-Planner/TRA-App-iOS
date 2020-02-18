@@ -1,7 +1,7 @@
 {
 	"HOME-MENU": {
 		"END-STATION": "Naar",
-		"END-STATION-HINT": "",
+		"END-STATION-HINT": "Kies een station",
 		"START-STATION": "Van",
 		"START-STATION-HINT": "Kies een station"
 	},
