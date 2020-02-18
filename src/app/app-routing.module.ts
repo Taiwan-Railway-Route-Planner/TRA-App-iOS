@@ -3,16 +3,21 @@ import { Routes } from '@angular/router';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { AppComponent } from './app.component';
 import { StartUpComponent } from './container/start-up/start-up.component';
+import { HomeMenuComponent } from './container/home-menu/home-menu.component';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/test',
         pathMatch: 'full'
     },
     {
-        path: 'home',
-        component: StartUpComponent
+        path: 'test',
+        component: HomeMenuComponent
+    },
+    {
+        path: 'start',
+        component: HomeMenuComponent
     }
 ];
 
