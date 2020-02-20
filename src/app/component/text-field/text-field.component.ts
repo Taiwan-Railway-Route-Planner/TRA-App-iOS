@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ns-form-station',
-  styleUrls: ['./form-station.component.scss'],
+  styleUrls: ['./text-field.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <FlexboxLayout class="container-row">
@@ -12,7 +12,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     </FlexboxLayout>
   `
 })
-export class FormStationComponent {
+export class TextFieldComponent {
 
   @Input() tc: string;
   /*** The show value of the TextField ***/

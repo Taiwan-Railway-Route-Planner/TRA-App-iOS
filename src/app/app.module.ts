@@ -16,7 +16,7 @@ import { BottomBarMenuModule } from './component/bottom-bar-menu/bottom-bar-menu
 import { AppSandbox } from './app.sandbox';
 import { LanguageService } from './service/language.service';
 import { HomeMenuComponent } from './container/home-menu/home-menu.component';
-import { FormStationComponent } from './component/form-station/form-station.component';
+import { TextFieldComponent } from './component/text-field/text-field.component';
 
 @NgModule({
     bootstrap: [
@@ -46,7 +46,7 @@ import { FormStationComponent } from './component/form-station/form-station.comp
         AppComponent,
         StartUpComponent,
         HomeMenuComponent,
-        FormStationComponent
+        TextFieldComponent
     ],
     providers: [
         AppSandbox,
