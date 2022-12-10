@@ -52,8 +52,8 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../theme/generalStyles.scss";
-    @import "../../theme/_variables.scss";
+    @import "../../theme/generalStyles";
+    @import "../../theme/variables";
 
     .modal {
         background-color: $white;
