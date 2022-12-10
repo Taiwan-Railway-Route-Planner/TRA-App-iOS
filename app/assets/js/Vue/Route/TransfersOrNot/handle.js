@@ -2,7 +2,7 @@
  Created by svend on 29/08/2019.
  **/
 
-let SocialShare = require("nativescript-social-share");
+let SocialShare = require("@nativescript/social-share");
 const language = require("./language");
 
 export default (function () {
