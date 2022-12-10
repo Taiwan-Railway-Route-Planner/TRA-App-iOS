@@ -9,14 +9,11 @@
     "@nativescript/social-share": "^2.3.0",
     "@nativescript/theme": "^3.0.2",
     "@nstudio/nativescript-loading-indicator": "^4.1.2",
-    "@vue/devtools": "^6.4.5",
     "moment": "2.29.4",
     "nativescript-feedback": "2.0.0",
     "nativescript-gif": "5.0.0",
-    "nativescript-socketio": "^3.3.1",
     "nativescript-toasty": "^2.0.1",
     "nativescript-vue": "^2.9.3",
-    "nativescript-vue-devtools": "^1.5.1",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

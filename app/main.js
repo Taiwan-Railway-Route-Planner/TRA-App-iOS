@@ -11,13 +11,9 @@ import store from './store';
 
 import {Gif} from "nativescript-gif";
 
-import VueDevtools from 'nativescript-vue-devtools'
 import {Label} from '@nativescript/core';
 
 
-if (TNS_ENV !== 'production') {
-    Vue.use(VueDevtools)
-}
 // Prints Vue logs when --env.production is *NOT* set while building
 Vue.config.silent = (TNS_ENV === 'production');
 
