@@ -97,8 +97,7 @@
     import Counties from "../../components/county-list/county-list.component"
 
     import { isIOS } from "@nativescript/core";
-    let application = require('application');
-    const utils = require('utils/utils');
+    import * as application from '@nativescript/core/application';
 
     export default {
         async created() {

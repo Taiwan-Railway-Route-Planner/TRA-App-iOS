@@ -53,8 +53,8 @@
     
     import handle from "../../assets/js/Vue/Support/handle"
 
-    const utils = require('utils/utils');
-    
+    import * as utils from '@nativescript/core/utils';
+
     export default {
         created: function () {
             handle.handleSetUpOfVue(this);

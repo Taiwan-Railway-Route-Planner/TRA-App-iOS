@@ -58,8 +58,7 @@
 
     import handle from "../../assets/js/Vue/Settings/handle";
     import { isIOS } from "@nativescript/core";
-
-    const utils = require('utils/utils');
+    import * as utils from '@nativescript/core/utils';
 
     export default {
         created: function () {
