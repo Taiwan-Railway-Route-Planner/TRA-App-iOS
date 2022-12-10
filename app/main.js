@@ -13,10 +13,6 @@ import {Gif} from "nativescript-gif";
 
 import {Label} from '@nativescript/core';
 
-
-// Prints Vue logs when --env.production is *NOT* set while building
-Vue.config.silent = (TNS_ENV === 'production');
-
 Vue.filter('unescape', v => unescape(v));
 
 Vue.registerElement("Gif", () => Gif);
