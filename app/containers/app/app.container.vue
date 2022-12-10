@@ -23,7 +23,7 @@
 <script>
 
     import handle from "../../assets/js/Vue/BootUp/handle";
-    import { isIOS } from "tns-core-modules/platform";
+    import { isIOS } from "@nativescript/core";
 
     export default {
         created() {

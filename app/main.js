@@ -12,6 +12,7 @@ import store from './store';
 import {Gif} from "nativescript-gif";
 
 import VueDevtools from 'nativescript-vue-devtools'
+import {Label} from '@nativescript/core';
 
 
 if (TNS_ENV !== 'production') {
@@ -24,7 +25,6 @@ Vue.filter('unescape', v => unescape(v));
 
 Vue.registerElement("Gif", () => Gif);
 
-import {Label} from "tns-core-modules/ui/label";
 
 class ScalingLabel extends Label {
     initNativeView() {
