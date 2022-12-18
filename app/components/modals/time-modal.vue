@@ -12,10 +12,10 @@
         </FlexboxLayout>
         <FlexboxLayout dock="center" class="timeSettings">
             <FlexboxLayout class="timeSelect">
-                <TimePicker v-model="timeWeSelected"/>
                 <FlexboxLayout class="now">
                     <Button class="btn btn-sq btn-wt" @tap="setTimeToNow" :text="$props.time.modal.center.button"/>
                 </FlexboxLayout>
+                <TimePicker v-model="timeWeSelected"/>
             </FlexboxLayout>
             <FlexboxLayout class="dateTimeSelect">
                 <FlexboxLayout class="dateTimeNav">
@@ -29,6 +29,9 @@
                     <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"/>
                 </FlexboxLayout>
             </FlexboxLayout>
+            <FlexboxLayout class="modelCalender" v-show="showModelCalender">
+              <DatePicker v-model="date" :minDate="minDate"/>
+            </FlexboxLayout>
         </FlexboxLayout>
     </DockLayout>
 </template>
@@ -40,6 +43,9 @@
 
     export default {
         props: ['time', 'formatTimeStampBasedOnLanguage', 'selectedTime'],
+        created: function () {
+          this.date = moment(this.$props.time.modal.center.date.today).toDate();
+        },
         computed: {
             smallerLabels() {
                 switch (this.$store.state.language) {
@@ -52,8 +58,19 @@
         },
         data() {
             return {
-                timeWeSelected: this.$props.selectedTime
+                timeWeSelected: this.$props.selectedTime,
+                date: this.$props.selectedDate,
+                minDate: '06-13-2019',
+                showModelCalender: false
             }
+        },
+        watch: {
+          date: function (newVal, _) {
+              this.$props.time.modal.center.date.today = moment(newVal).format();
+              this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today);
+              this.time.date.show = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(this, this.$props.time.modal.center.date.today);
+              this.time.date.real = moment(this.$props.time.modal.center.date.today).locale('en').format('YYYYMMDD');
+          }
         },
         methods: {
             setTimeToNow: function () {
@@ -62,13 +79,15 @@
             previousDay: function () {
                 this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).subtract(1, 'days'));
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).subtract(1, 'days');
+                this.date = moment(this.$props.time.modal.center.date.today).toDate()
             },
             nextDay: function () {
                 this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, moment(this.$props.time.modal.center.date.today).add(1, 'days'));
                 this.$props.time.modal.center.date.today = moment(this.$props.time.modal.center.date.today).add(1, 'days');
+                this.date = moment(this.$props.time.modal.center.date.today).toDate();
             },
             modalCalender: function () {
-                this.$emit('changeModalReturnTime', this.timeWeSelected);
+                this.showModelCalender = !this.showModelCalender;
             },
             discard: function () {
                 handle.discard(this);
@@ -109,91 +128,105 @@
         flex-direction: column;
         width: 100%;
         height: 60%;
-    }
 
-    .timeSettings .timeSelect {
+      .timeSelect {
+        margin-top: 20;
         flex-direction: row;
-        align-self: center;
-        margin-bottom: -20;
-        padding-top: -20;
-    }
+        width: 40%;
+        justify-content: center;
 
-    .timeSettings .timeSelect TimePicker {
-        width: 80%;
-    }
+        TimePicker {
+          width: 30%;
+        }
 
-    .timeSettings .timeSelect .now {
-        flex-direction: column;
-        align-self: center;
-        width: 20%;
-    }
+        .now {
+          flex-direction: column;
+          align-self: center;
+          width: 40%;
+          margin-right: 10;
 
-    .timeSettings .timeSelect .now Button {
-        /*iOS*/
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+          Button {
+            /*iOS*/
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
 
-    .timeSettings .dateTimeSelect {
+      .dateTimeSelect {
+        margin-top: 40;
         flex-direction: row;
         width: 100%;
         align-items: center;
         margin-left: 10;
-    }
+        padding-bottom: 10;
 
-    .timeSettings .dateTimeSelect .dateTimeNav {
+        .dateTimeNav {
+          flex-direction: row;
+          justify-content: space-between;
+          width: 80%;
+
+          .fas {
+            color: $primary;
+          }
+
+          .timeStamp {
+            flex-direction: column;
+            align-self: center;
+          }
+        }
+
+        .calenderView {
+          /*Android*/
+          /*width: 20%;*/
+          /*iOS*/
+          width: 30%;
+          height: 100px;
+
+          .far {
+            font-size: 20;
+          }
+        }
+      }
+
+      .modelCalender {
         flex-direction: row;
-        justify-content: space-between;
-        width: 80%;
-    }
+        margin-top: 10;
 
-    .timeSettings .dateTimeSelect .dateTimeNav .fas {
-        color: $primary;
-    }
-
-    .timeSettings .dateTimeSelect .dateTimeNav .timeStamp {
-        flex-direction: column;
-        align-self: center;
-    }
-
-    .timeSettings .dateTimeSelect .calenderView {
-        /*Android*/
-        /*width: 20%;*/
-        /*iOS*/
-        width: 30%;
-        height: 100px;
-    }
-
-    .timeSettings .dateTimeSelect .calenderView .far {
-        font-size: 20;
+        DatePicker {
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
     }
 
     .departureOrArrival {
         flex-direction: row;
         width: 100%;
         justify-content: center;
-    }
 
-    .departureOrArrival .smaller-departureOrArrival {
+      .smaller-departureOrArrival {
         width: 80%;
         border-bottom-width: 3px;
         border-bottom-color: $white;
         border-bottom-style: solid;
         text-align: center;
-    }
 
-    .departureOrArrival .smaller-departureOrArrival .topLabel {
-        width: 50%;
-        font-size: 18;
-        padding-top: 15;
-        padding-bottom: 15;
-    }
+        .topLabel {
+          width: 50%;
+          font-size: 18;
+          padding-top: 15;
+          padding-bottom: 15;
+        }
 
-    .departureOrArrival .smaller-departureOrArrival .active {
-        border-bottom-width: 6px;
-        border-bottom-color: $primary;
-        border-bottom-style: solid;
+        .active {
+          border-bottom-width: 6px;
+          border-bottom-color: $primary;
+          border-bottom-style: solid;
+        }
+      }
     }
 
 </style>

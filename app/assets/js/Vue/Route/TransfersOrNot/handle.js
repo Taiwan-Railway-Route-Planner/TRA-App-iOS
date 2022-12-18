@@ -2,13 +2,12 @@
  Created by svend on 29/08/2019.
  **/
 
-let SocialShare = require("nativescript-social-share");
+let SocialShare = require("@nativescript/social-share");
 const language = require("./language");
 
 export default (function () {
 
     const share = function (_self, transferOrNot) {
-        console.log(_self.$props.routeDetails);
         SocialShare.shareText(loadLanguage(_self, transferOrNot));
     };
 

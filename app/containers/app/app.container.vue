@@ -5,7 +5,7 @@
                 <Label class="title" text="TRA Route Planner"/>
             </FlexboxLayout>
             <FlexboxLayout dock="bottom" class="menu-bottom">
-                <Button v-show="selected" class="btn" :text="data.confirm" @tap="confirm"/>
+                <Button class="btn" :text="data.confirm" @tap="confirm"/>
             </FlexboxLayout>
             <FlexboxLayout dock="center" class="menu-center" separatorColor="#1a0dab">
                 <ListView for="(item, index) in languages" ref="listview" class="listView" @itemTap="onItemTap" @itemLoading="onItemLoading">
@@ -23,11 +23,12 @@
 <script>
 
     import handle from "../../assets/js/Vue/BootUp/handle";
-    import { isIOS } from "tns-core-modules/platform";
+    import { isIOS } from "@nativescript/core";
 
     export default {
         created() {
             handle.handle(this);
+            handle.loadSelectedLanguage(this, 'EN');
         },
         data() {
             return {
@@ -35,7 +36,6 @@
                 data: {
                     confirm: ""
                 },
-                selected: false,
                 saveAbbr: null
             }
         },
@@ -87,41 +87,41 @@
 
     .menu-center{
         flex-direction: column;
-    }
 
-    .menu-center .listView{
+      .listView {
         background-color: $primary;
 
-        .ns-dark &{
-            background-color: $dark-primary;
+        .ns-dark & {
+          background-color: $dark-primary;
         }
-    }
+      }
 
-    .menu-center .element{
+      .element {
         padding-top: 20%;
         flex-direction: column;
         align-items: center;
         background-color: $primary;
 
-        .ns-dark &{
-            background-color: $dark-primary;
+        .ns-dark & {
+          background-color: $dark-primary;
         }
-    }
 
-    .menu-center .element .top-text{
-        font-size: 20;
+        .top-text{
+          font-size: 20;
+        }
+      }
     }
 
     .menu-bottom{
         justify-content: center;
-    }
 
-    .menu-bottom .btn{
+      .btn{
         height: 10%;
         width: 80%;
         background-color: $white;
         color: $primary;
         margin-bottom: 3%;
+      }
     }
 
 </style>

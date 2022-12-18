@@ -96,9 +96,8 @@
     import loadingModal from "../../components/loading-modal/loading-modal.component"
     import Counties from "../../components/county-list/county-list.component"
 
-    import { isIOS } from "tns-core-modules/platform";
-    let application = require('application');
-    const utils = require('utils/utils');
+    import { isIOS } from "@nativescript/core";
+    import * as application from '@nativescript/core/application';
 
     export default {
         async created() {
@@ -210,7 +209,7 @@
             goBackToNormalScreen: function () {
                 this.search = false;
                 if (isIOS) {
-                    UIApplication.sharedApplication.keyWindow.endEditing(true);
+                    application.ios.nativeApp.sendActionToFromForEvent('resignFirstResponder', null, null, null);
                 }
             },
             showSearch: async function (departureOrArrival) {

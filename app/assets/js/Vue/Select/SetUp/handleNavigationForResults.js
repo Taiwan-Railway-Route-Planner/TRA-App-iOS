@@ -7,7 +7,6 @@ import {
     LoadingIndicator,
     Mode
 } from '@nstudio/nativescript-loading-indicator';
-import { Frame } from "ui/frame";
 
 
 export default (function () {

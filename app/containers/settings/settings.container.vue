@@ -57,9 +57,8 @@
 <script>
 
     import handle from "../../assets/js/Vue/Settings/handle";
-    import { isIOS } from "tns-core-modules/platform";
-
-    const utils = require('utils/utils');
+    import { isIOS } from "@nativescript/core";
+    import * as utils from '@nativescript/core/utils';
 
     export default {
         created: function () {
@@ -84,7 +83,7 @@
                 possibleLanguages: null,
                 possibleLanguagesArray: null,
                 selectedItem: null,
-                currentVersion: '0.0.1'
+                currentVersion: '1.2.0'
             }
         },
         methods: {
@@ -103,7 +102,7 @@
             },
             openGooglePlay: function () {
                 if (isIOS){
-                    // TODO
+                    utils.openUrl("https://apps.apple.com/us/app/taiwan-railway-route-planner/id1494012063")
                 } else {
                     utils.openUrl("market://details?id=com.wingcrony.tra.app");
                 }
@@ -165,6 +164,9 @@
     }
 
     .dock-center .settings .languagesSettings .btn.btn-wt{
+        align-self: center;
+        width: 80%;
+        margin-top: 8%;
 
         .ns-dark &{
             align-self: center;
