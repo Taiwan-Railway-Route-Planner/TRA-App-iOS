@@ -66,7 +66,6 @@
         },
         watch: {
           date: function (newVal, _) {
-            console.log(newVal);
               this.$props.time.modal.center.date.today = moment(newVal).format();
               this.$props.time.modal.center.date.actual = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForModel(this, this.$props.time.modal.center.date.today);
               this.time.date.show = this.$props.formatTimeStampBasedOnLanguage.formatTimeStampForShowingSelect(this, this.$props.time.modal.center.date.today);
