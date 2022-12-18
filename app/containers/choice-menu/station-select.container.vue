@@ -208,9 +208,9 @@
             },
             goBackToNormalScreen: function () {
                 this.search = false;
-                if (isIOS) {
-                    UIApplication.sharedApplication.keyWindow.endEditing(true);
-                }
+                // if (isIOS) {
+                //     UIApplication.sharedApplication.keyWindow.endEditing(true);
+                // }
             },
             showSearch: async function (departureOrArrival) {
                 const isntEmpty = await handle.checkFirstIfTheElementsArentEmpty(this);
