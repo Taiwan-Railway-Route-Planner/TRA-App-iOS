@@ -5,7 +5,6 @@
 import { Connectivity } from '@nativescript/core'
 export function checkInternetConnection() {
     const myConnectionType = Connectivity.getConnectionType();
-    console.log('myConnectionType', myConnectionType)
     switch (myConnectionType) {
         case Connectivity.connectionType.none:
             return false;
