@@ -102,7 +102,7 @@
             },
             openGooglePlay: function () {
                 if (isIOS){
-                    // TODO
+                    utils.openUrl("https://apps.apple.com/us/app/taiwan-railway-route-planner/id1494012063")
                 } else {
                     utils.openUrl("market://details?id=com.wingcrony.tra.app");
                 }
