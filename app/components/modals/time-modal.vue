@@ -29,7 +29,7 @@
                     <Button class="btn btn-sq btn-wt far" @tap="modalCalender" :text="'\uf073' | unescape"/>
                 </FlexboxLayout>
             </FlexboxLayout>
-            <FlexboxLayout class="modelCalender" v-show="!showModelCalender">
+            <FlexboxLayout class="modelCalender" v-show="showModelCalender">
               <DatePicker v-model="date" :minDate="minDate"/>
             </FlexboxLayout>
         </FlexboxLayout>

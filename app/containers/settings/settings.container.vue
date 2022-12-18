@@ -164,6 +164,9 @@
     }
 
     .dock-center .settings .languagesSettings .btn.btn-wt{
+        align-self: center;
+        width: 80%;
+        margin-top: 8%;
 
         .ns-dark &{
             align-self: center;

@@ -8,7 +8,6 @@ const language = require("./language");
 export default (function () {
 
     const share = function (_self, transferOrNot) {
-        console.log(_self.$props.routeDetails);
         SocialShare.shareText(loadLanguage(_self, transferOrNot));
     };
 

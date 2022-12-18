@@ -18,6 +18,8 @@ module.exports = (function () {
                 _self.$store.commit('forceUpdateStationInfo', true);
                 _self.data.stationInfo = stations.data;
                 _self.isFetching = false;
+            } else {
+                _self.filteredStations === null;
             }
         } else {
             _self.data.stationInfo = _self.$store.state.stations;
