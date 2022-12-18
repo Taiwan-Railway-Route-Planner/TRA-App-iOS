@@ -44,7 +44,6 @@ export default (function () {
                 break;
         }
         _self.saveAbbr = abbr;
-        _self.selected = true;
     };
 
     return {
